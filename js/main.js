@@ -81,7 +81,7 @@ document.getElementById("btn-submit").addEventListener("click", () => {
     data.forEach((r) => {
       if (r[0] != "Customer") {
         Categories1Sheet4.push(r[0]);
-        arr1sheet4.push(Math.floor(r[1] * 100));
+        arr1sheet4.push(Math.round(r[1] * 100));
       }
     });
   });
@@ -91,8 +91,8 @@ document.getElementById("btn-submit").addEventListener("click", () => {
       data.forEach((r) => {
         if (r[0] != "Bank") {
           Categories1Sheet5.push(r[0]);
-          arr1sheet5.push(Math.floor(r[5] * 100));
-          arr2sheet5.push(Math.floor(r[6] * 100));
+          arr1sheet5.push(Math.round(r[5] * 100));
+          arr2sheet5.push(Math.round(r[6] * 100));
         }
       });
     }
@@ -114,10 +114,11 @@ document.getElementById("btn-submit").addEventListener("click", () => {
     data.forEach((r) => {
       if (r[0] != "Bank") {
         Categories1Sheet7.push(r[0]);
-        arr1sheet7.push(Math.floor(r[4] * 100));
-        arr2sheet7.push(Math.floor(r[5] * 100));
+        arr1sheet7.push(Math.round(r[4] * 100));
+        arr2sheet7.push(Math.round(r[5] * 100));
       }
     });
+    console.log(arr2sheet7);
   });
   //End Uploading files
   upload.value = "";
@@ -587,8 +588,11 @@ function AllChart() {
           duration: 1500,
         },
         color: "#0cc0df",
-        style: {
-          fontSize: "11px",
+        dataLabels: {
+          style: {
+            fontSize: "11px",
+          },
+          x: -6,
         },
       },
       {
@@ -599,8 +603,11 @@ function AllChart() {
           defer: 1500,
           duration: 2000,
         },
-        style: {
-          fontSize: "11px",
+        dataLabels: {
+          style: {
+            fontSize: "11px",
+          },
+          x: 4,
         },
       },
     ],
@@ -711,6 +718,9 @@ function AllChart() {
         dataLabels: {
           format: `{point.y}%`,
           enabled: true,
+          style: {
+            fontSize: "10px",
+          },
         },
       },
     },
@@ -721,16 +731,19 @@ function AllChart() {
       {
         name: "Out SLA",
         data: arr1sheet7,
-        color: "#FF5722",
+        color: "#FF4433",
         animation: {
           defer: 1500,
           duration: 1500,
+        },
+        dataLabels: {
+          y: 9,
         },
       },
       {
         name: "Within SLA",
         data: arr2sheet7,
-        color: "#80CBC4",
+        color: "#00008B",
         animation: {
           defer: 1500,
           duration: 2000,
