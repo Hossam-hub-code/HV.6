@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart Module V2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="js/read-excel-file.js"></script>
+  </head>
+  <body>
+    <div class="loading">
+      <span></span>
+      <img src="imgs/logo.jpg" alt="" />
+      <span></span>
+    </div>
+    <div id="counter">
+      <input id="preValue" type="text" value="5" />
+      <span>presentation Time</span>
+    </div>
+    <div id="controller">
+      <label for="file" class="custom-file-upload">
+        upload your file please
+      </label>
+      <input type="file" id="file" />
+      <button id="btn-submit">submit</button>
+      <button id="btn-start">Start</button>
+    </div>
+    <img class="background" src="imgs/Raya-Holding.jpg" alt="" />
+    <div id="presentation">
+      <div>
+        <h1>
+          Get Ready For
+          <img src="imgs/small-logo.jpg" alt="" />
+          presentation
+        </h1>
+      </div>
+    </div>
+    <div class="containers">
+      <img src="imgs/logo-chart.png" alt="" />
+      <div class="slider-container">
+        <div id="slide-number" class="slide-number"></div>
+        <div id="container-1"></div>
+        <div id="container-2"></div>
+        <div id="container-3"></div>
+        <div id="container-4"></div>
+        <div id="container-5"></div>
+        <div id="container-6"></div>
+        <div id="container-7"></div>
+      </div>
+      <div class="slider-controls">
+        <span id="prev" class="prev">&lt;</span>
+        <span id="indicators" class="indicators"></span>
+        <span id="next" class="next">&gt;</span>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
